@@ -77,7 +77,7 @@ for i in range(N_epoch):
     
 all_model_result = [all_model,all_loss]
 
-with open('all_mode_loss_0.0005 dis1024 0.5 batch64 60 full.pkl', 'wb') as f:
+with open('all_mode_loss.pkl', 'wb') as f:
     pickle.dump(all_model_result, f)
     f.close()
 # AAE generation
