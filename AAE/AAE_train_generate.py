@@ -15,36 +15,7 @@ from idseq_build import build_id_seq
 from AAE_module import AAE
 from AAE_trainer import AAE_Trainer
 
-# with open('ECFP_qm9_dataset.pkl', 'rb') as f:
-#     data_list = pickle.load(f)
-#     f.close()
-    
 
-# tasks, train_dataset, val_dataset, test_dataset, transformers = data_list
-# train_smiles = train_dataset.ids
-# val_smiles = val_dataset.ids
-# test_smiles = test_dataset.ids
-# data_list = [tasks, train_smiles, val_smiles, test_smiles]
-
-# with open('ECFP_qm9_data_7_11.pkl', 'wb') as f:
-#     pickle.dump(data_list, f)
-#     f.close()
-#load dataset
-# with open('ECFP_QM9_dataset.pkl', 'rb') as f:
-#     data_list = pickle.load(f)
-#     f.close()
-    
-
-# tasks, train_dataset, val_dataset, test_dataset, transformers = data_list
-
-#########################################################################
-# train_smiles = train_dataset.ids
-# val_smiles = val_dataset.ids
-# test_smiles = test_dataset.ids
-
-# with open('ECFP_qm9_data.pkl', 'rb') as f:
-#     data_list = pickle.load(f)
-#     f.close()
 with open('d1a1_all_smile.pkl', 'rb') as f:
     data_list = pickle.load(f)
     f.close()
@@ -76,13 +47,6 @@ for i in x:
     
 all_smile=np.array(all_smile)
 test_X_mol_idseq, test_X_char_vocab = build_id_seq(all_smile)
-
-
-# with open('d1a1_all_smile.pkl', 'wb') as f:
-#     pickle.dump(all_smile, f)
-#     f.close()
-# index_id = list(range(0,len(xx)))
-# np.random.shuffle(index_id)
 
 #########################################################################
 
@@ -140,95 +104,6 @@ with open('all_mode_loss_0.0005 dis1024 0.5 batch64 60 full.pkl', 'wb') as f:
 generated_samples = model.samples_generation(1000)   
 
  
-# all_loss_array = np.array(all_val_loss)
-# sorted_id = all_loss.index(np.min(all_loss_array))
 
-# used_model = all_model[sorted_id]
-
-# latent_space = used_model.encoder_forward(test_X_mol_idseq)
-# a,b,c  = used_model.decoder_forward(test_X_mol_idseq, latent_space)
-
-# c=c.cpu().detach().numpy()
-# bb=[]
-# m = torch.nn.Softmax(dim=0)
-
-# for i in range(len(b)):
-#     q = m(b[i,:]).cpu().detach().numpy().tolist()
-#     bb.append(q.index(np.max(q)))
-    
-# index_22 = [i for i,x in enumerate(c.tolist()) if x==22]
-# index_23 = np.array([i for i,x in enumerate(c.tolist()) if x==23])
-
-# index_23_ = []
-
-# for i in index_22:
-#    l = index_23[index_23 < i]
-#    if len(l)==0:
-#        index_23_.append(0)
-#    else:
-#        index_23_.append(l[-1])
-
-# true_xx = []
-
-# pred_yy = []
-
-# for i,j in zip(index_23_[1:],index_22[1:]):
-#    true_xx.append(c[i+1:j])
-#    pred_yy.append(bb[i+1:j])
-   
-# same_num = []
-
-# for i in range(len(true_xx)):
-#    aaa = np.sum(true_xx[i] - pred_yy[i])
-#    if aaa == 0:
-#        same_num.append(1)
-#    else:
-#        same_num.append(0)
-       
-       
-# precision = sum(same_num) / len(true_xx)
-
-#dict_i2c = X_char_vocab.i2c
-#all_smi = []
-#for i in pred_yy:
-#    a=''
-#    smi=[dict_i2c[k] for k in i]
-#    aa=a.join(smi)
-#    all_smi.append(aa)
-#    
-#eff_smi = []
-#for i in all_smi:
-#    
-#    mol = Chem.MolFromSmiles(i) 
-#    try:
-#        Chem.SanitizeMol(mol)
-#        eff_smi.append(1)
-#    except Exception as e:
-#        # print(e)
-#        eff_smi.append(0)
-# 
-#eff_rate = sum(np.array(eff_smi)) / len(all_smi)
-# all_model_result = all_model
-
-# with open('all_model.pkl', 'wb') as f:
-#     pickle.dump(all_model_result, f)
-#     f.close()
-
-
-    
-# # AAE training
-# N_epoch = 10
-
-# for i in range(N_epoch):
-#     time_start = time.time()
-#     loss_train = trainer.train(X_mol_idseq, recon_ratio)
-#     time_end = time.time()
-    
-#     print(i, loss_train)
-#     print(time_end-time_start)
-    
-    
-# # AAE generation
-# generated_samples = model.samples_generation(1000)
 
 
