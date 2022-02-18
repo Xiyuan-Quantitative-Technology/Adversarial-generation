@@ -18,32 +18,12 @@ from AAE_trainer import AAE_Trainer
 
 with open('d1a1_all_smile.pkl', 'rb') as f:
     data_list = pickle.load(f)
-    f.close()
-    
-    
-all_smile = data_list    
-    
-# tasks, train_smiles, val_smiles, test_smiles = data_list
-with open('fullD1A1_pred_ECFP_input.pkl', 'rb') as f:
-    data_list = pickle.load(f)
-    f.close()
-    
-    
+    f.close()  
 input_smile, M_ECFP = data_list
 
 all_smile = []
 for i in input_smile:
     all_smile.append(str(i[0]))
-# X_mol_idseq, X_char_vocab = build_id_seq(input_smile)
-with open('D1A1_database_input.pkl', 'rb') as f:
-    data_list = pickle.load(f)
-    f.close()
-    
-    
-tasks, x, test_smiles = data_list
-
-for i in x:
-    all_smile.append(str(i))
     
 all_smile=np.array(all_smile)
 test_X_mol_idseq, test_X_char_vocab = build_id_seq(all_smile)
