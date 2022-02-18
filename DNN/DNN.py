@@ -154,27 +154,3 @@ y_train_loss_df.to_csv('all_train_loss_array.csv',header=0,index=None)
 
 y_val_loss_df=pd.DataFrame(all_val_loss_array)
 y_val_loss_df.to_csv('all_val_loss_array.csv',header=0,index=None)    
-
-# y_pred_value_df=pd.DataFrame(y_pred_value).T
-# y_pred_value_df.to_csv('y_train_value.csv',header=0,index=None)
-
-# y_test_value_df=pd.DataFrame(y_test_value).T
-# y_test_value_df.to_csv('y_test_value.csv',header=0,index=None)
-
-# y_train_value_df=pd.DataFrame(y_train_value).T
-# y_train_value_df.to_csv('y_train_value.csv',header=0,index=None)
-
-# y_train_pred_value_df=pd.DataFrame(y_train_pred_value).T
-# y_train_pred_value_df.to_csv('y_train_pred_value.csv',header=0,index=None)
-
-# y_test_r_2_value_df=pd.DataFrame(y_test_r_2_value).T
-# y_test_r_2_value_df.to_csv('y_test_r_2_value.csv',header=0,index=None)
-
-# y_test_rmse_value_df=pd.DataFrame(y_test_rmse_value).T
-# y_test_rmse_value_df.to_csv('y_test_rmse_value.csv',header=0,index=None)
-
-# y_train_r_2_value_df=pd.DataFrame(y_train_r_2_value).T
-# y_train_r_2_value_df.to_csv('y_train_r_2_value.csv',header=0,index=None)
-
-# y_train_rmse_value_df=pd.DataFrame(y_train_rmse_value).T
-# y_train_rmse_value_df.to_csv('y_train_rmse_value.csv',header=0,index=None)
